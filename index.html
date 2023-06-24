@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <div class="navbar">
+
+        <div class="title">
+            <a href="">Library System</a>
+        </div>
+
+        <div class="header-right">
+            <a href="#book">Books</a>
+            <a href="#register">Register</a>
+            <a href="">Contact Us</a>
+            <a href="">Logout</a>
+        </div>
+
+    </div>
+
+    <div class="main-container" id="book">
+       <div><h2>Books</h2></div><br>
+        <table class="table">
+           <!-- <caption><b>Books</b></caption>  -->
+           <!-- <thead><th><h2>Books</h2></th></thead> -->
+           <!-- <th><h2>Books</h2></th> -->
+
+           <tr id="table-titles">
+            <td>Book ID</td>
+            <td>Title</td>
+            <td>Author</td>
+            <td>Genre</td>
+            <td>Availability</td>
+           </tr>
+
+           <tr>
+            <td>1</td>
+            <td>
+                <a href="https://en.wikipedia.org/wiki/The_Da_Vinci_Code">The Da Vinci Code</a>
+                <table class="inside-table">
+                    <tr><td>Publication Date: 2003</td></tr>
+                    <tr><td>Page Count: 489</td></tr>
+                    <tr><td>ISBN: 123-4567890123</td></tr>
+                </table>
+            </td>
+            <td>Dan Brown</td>
+            <td>Mystery</td>
+            <td>Available</td>
+           </tr>
+
+           <tr>
+            <td>2</td>
+            <td>
+                <a href="https://en.wikipedia.org/wiki/The_Alchemist_(novel)">The Alchemist</a>
+                <table class="inside-table">
+                    <tr><td>Publication Date: 1988</td></tr>
+                    <tr><td>Page Count: 197</td></tr>
+                    <tr><td>ISBN: 123-4567890456</td></tr>
+                </table>
+            </td>
+            <td>Paulo Coelho</td>
+            <td>Fiction</td>
+            <td>Not Available</td>
+           </tr>
+
+           <tr>
+            <td>3</td>
+            <td>
+                <a href="https://en.wikipedia.org/wiki/The_Guide_(novel)">The Guide</a>
+                <table class="inside-table">
+                    <tr><td>Publication Date: 1958</td></tr>
+                    <tr><td>Page Count: 176</td></tr>
+                    <tr><td>ISBN: 123-4567890789</td></tr>
+                </table>
+            </td>
+            <td>R.K. Narayan</td>
+            <td>Fiction</td>
+            <td>Available</td>
+           </tr>
+
+           <tr>
+            <td>4</td>
+            <td>
+                <a href="https://en.wikipedia.org/wiki/Five_Point_Someone">Five Point Someone</a>
+                <table class="inside-table">
+                    <tr><td>Publication Date: 2004</td></tr>
+                    <tr><td>Page Count: 270</td></tr>
+                    <tr><td>ISBN: 123-4567891234</td></tr>
+                </table>
+            </td>
+            <td>Chetan Bhagat</td>
+            <td>Fiction</td>
+            <td>Available</td>
+           </tr>
+
+           <tr>
+            <td>5</td>
+            <td>
+                <a href="https://en.wikipedia.org/wiki/Wings_of_Fire">Wings of Fire</a>
+                <table class="inside-table">
+                    <tr><td>Publication Date: 1999</td></tr>
+                    <tr><td>Page Count: 180</td></tr>
+                    <tr><td>ISBN: 123-4567892123</td></tr>
+                </table>
+            </td>
+            <td>Abdul Kalam</td>
+            <td>Autobiography</td>
+            <td>Available</td>
+           </tr>
+
+        </table>
+    </div>
+    <br><br>
+
+    <div class="main-container" id="register">
+        <div><h2>Register</h2></div><br>
+        <form class="form" action="/submit" target="_self" method="post">
+
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" size="85" required> 
+            
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" size="85" required>
+
+            <label for="dob">Date Of Birth:</label>
+            <input type="date" id="dob" name="dob" style="width: 600px;" placeholder="dd/mm/yyyy" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="5" max="100" style="width: 600px;" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" size="85" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" size="85" required>
+            
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" size="85" pattern="^.*$" required oninput="checkPassword(this)">
+
+            <!-- <input type="submit" value="Register"> -->
+            <button type="submit">Register</button>
+
+        </form>
+    </div>
+
+    <script>
+        function checkPassword(input) {
+          if (input.value !== document.getElementById('password').value) {
+            input.setCustomValidity('Passwords must match.');
+          } else {
+            input.setCustomValidity('');
+          }
+        }
+      </script>
+</body>
+</html>
